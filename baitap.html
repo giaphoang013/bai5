@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .content{
+            background-color: rgb(32, 95, 110);
+            padding: 100px 30px;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden; 
+            
+        }
+     /* Không dùng before, after mà dùng 2 thẻ div ở trước đoạn văn và sau cũng được */
+        .content::before{
+            content: "";
+            display: block;
+            width: 120px;
+            height: 120px;
+            background-color: #3f49d459;
+            border-radius: 50%;
+            position:absolute;
+            left: 0;
+            top: 0;
+        }
+        .content::after{
+            content: "";
+            display: block;
+            width: 220px;
+            height: 220px;
+            background-color: #1e32a5;
+            border-radius: 50%;
+            position:absolute;
+            right: -50px;
+            bottom: -50px;
+         
+
+        }
+        .content .inner-content{
+            color: white;
+            position: relative;
+            z-index: 1;
+            /* Phải có relative thì z-index mới có hiệu lực */
+        }
+        .content .inner-content::first-letter{
+            font-size: 40px;
+        }
+        .content .inner-content::first-line{
+            text-transform: uppercase;
+        }
+    </style>
+    <div class="content">
+        <div class="inner-content">
+            Một số quốc gia và phái đoàn nước ngoài khác, như Pakistan và Liên minh châu Âu, đã cử cán bộ ngoại giao cấp cao đến Kabul để lãnh đạo các phái đoàn ngoại giao còn hoạt động ở Afghanistan. Nhưng họ chỉ có chức danh Đại biện, tức là họ đảm nhiệm công việc của Đại sứ nhưng không chính thức giữ vai trò ấy.
+        </div>
+
+    </div>
+</body>
+</html>
